@@ -16,7 +16,7 @@ async def main():
         print(f"Tapo[{args.ip}]: " + msg)
 
     client = ApiClient(args.username, args.password)
-    device = await client.p100(args.ip)
+    device = await client.generic_device(args.ip)
 
     if args.action == 'off' or args.action == 'toggle':
         tapo_print("Turning device off...")
