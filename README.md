@@ -27,3 +27,7 @@ To install on the PiKVM, run the following commands:
 ## Configuration
 
 The script also supports a "toggle" action, which turns the plug off, waits 2 seconds then turns it back on again. Update the `override.yaml` as necessary for this to function.
+
+## Misc
+
+In progress is a proper PiKVM-plugin, currently you have to manually install this to `/usr/lib/python3.12/site-packages/kvmd/plugins/ugpio/tapo.py` from the `plugin.py` file in this repository. An example override is in `override.plugin.yaml`

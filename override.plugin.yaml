@@ -1,0 +1,25 @@
+kvmd:
+  gpio:
+    drivers:
+      plug_1:
+        type: tapo
+        ip: 1.2.3.4
+        email: your@email.domain
+        password: my-super-secure-password
+
+    scheme:
+      plug_1_switch:
+        driver: plug_1
+        pin: 0
+        mode: output
+        switch: true
+        initial: null
+        pulse:
+          delay: 0
+    view:
+      header:
+        title: Power
+      table:
+        - ["#Power Switches"]
+        - []
+        - ["#Switch 1", plug_1_switch]
