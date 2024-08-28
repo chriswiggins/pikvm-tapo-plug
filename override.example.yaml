@@ -1,0 +1,87 @@
+kvmd:
+  gpio:
+    drivers:
+      off_1:
+        type: cmd
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, off]
+      on_1:
+        type: cmd
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, on]
+      status_1:
+        type: cmdret
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, status]
+
+      off_2:
+        type: cmd
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, off]
+      on_2:
+        type: cmd
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, on]
+      status_2:
+        type: cmdret
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, status]
+
+      off_3:
+        type: cmd
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, off]
+      on_3:
+        type: cmd
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, on]
+      status_3:
+        type: cmdret
+        cmd: [/usr/bin/python3, /opt/tapo/main.py, --username, TAPO_EMAIL, --password, TAPO_PASSWORD, --ip, DEVICE_IP, status]
+
+    scheme:
+      off_1:
+        driver: off_1
+        pin: 0
+        mode: output
+        switch: false
+      on_1:
+        driver: on_1
+        pin: 0
+        mode: output
+        switch: false
+      status_1:
+        driver: status_1
+        pin: 0
+        mode: input
+
+      off_2:
+        driver: off_2
+        pin: 0
+        mode: output
+        switch: false
+      on_2:
+        driver: on_2
+        pin: 0
+        mode: output
+        switch: false
+      status_2:
+        driver: status_2
+        pin: 0
+        mode: input
+
+      off_3:
+        driver: off_3
+        pin: 0
+        mode: output
+        switch: false
+      on_3:
+        driver: on_3
+        pin: 0
+        mode: output
+        switch: false
+      status_3:
+        driver: status_3
+        pin: 0
+        mode: input
+    view:
+      header:
+        title: GPIO
+      table:
+        - ["#Power Switches"]
+        - []
+        - ["#Switch 1", status_1, "off_1|Off", "on_1|On"]
+        - ["#Switch 2", status_2, "off_2|Off", "on_2|On"]
+        - ["#Switch 3", status_3, "off_3|Off", "on_3|On"]
